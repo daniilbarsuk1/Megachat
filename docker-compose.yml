@@ -1,0 +1,15 @@
+version: '2'
+services:
+  megachat:
+    container_name: megachat
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: megachat:1.0.0
+    ports:
+      - "8081:8081"
+    networks:
+      - spring-cloud-network
+networks:
+  spring-cloud-network:
+    driver: bridge
